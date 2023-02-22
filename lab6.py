@@ -61,9 +61,9 @@ def save_installer(installer_data):
     file_directory = r'C:\temp\installers'
     file_path = 'vlc.exe'
     installer_path = os.path.join(file_directory, file_path)
-    if not os.path.isdir(installer_path):
-        os.makedirs(installer_path)
-        return installer_path
+    if not os.path.isdir(file_directory):
+        os.makedirs(file_directory)
+        return file_directory
     with open(installer_path, 'wb') as file:
         file.write(installer_data)
   
