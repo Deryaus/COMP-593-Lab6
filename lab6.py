@@ -54,19 +54,19 @@ def installer_ok(installer_data, expected_sha256):
         print('Expected SHA-256 value matches downloaded SHA-256 Value.')
     else:
         print(f'SHA-256 Values do not match.\nExpected hash value is: {expected_sha256}.')
-        print(f'The hash value of the downloaded file is: {hash_value}.\nPlease download file from a different source.')
+        print(f'The hash value of the downloaded file is: {sha256_value}.\nPlease download file from a different source.')
         sys.exit()
 
 def save_installer(installer_data):
     file_directory = r'C:\temp\installers'
-    file_path = '.exe'
+    file_path = 'vlc.exe'
     installer_path = os.path.join(file_directory, file_path)
     if not os.path.isdir(installer_path):
         os.makedirs(installer_path)
         return installer_path
     with open(installer_path, 'wb') as file:
         file.write(installer_data)
-    
+  
 def run_installer(installer_path):
     #subprocess.run([installer_path, '/L=1033', '/S'])
     return
